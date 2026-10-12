@@ -54,12 +54,11 @@ export function toPublic(traveler: Traveler): PublicTraveler {
 
 export async function listSignups() {
   const store = await readStore();
-  const drawn = new Set(store.drawIds);
   return {
     travelers: store.travelers.map(toPublic),
     group: store.drawIds
       .map((id) => store.travelers.find((traveler) => traveler.id === id))
-      .filter((traveler): traveler is Traveler => Boolean(traveler) && drawn.has(traveler.id))
+      .filter((traveler): traveler is Traveler => traveler !== undefined)
       .map(toPublic),
   };
 }
