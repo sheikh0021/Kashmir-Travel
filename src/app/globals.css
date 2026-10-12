@@ -1,26 +1,176 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f6f0e6;
+  --cream: #fffaf4;
+  --navy: #16343c;
+  --gold: #9a5314;
+  --gold-bright: #f0c27a;
+  --sand: #ead4b8;
+  --mist: #5c6a64;
+  --lake: #2f7c8a;
+  --pine: #1f6a48;
+  --background: var(--paper);
+  --foreground: var(--navy);
 }
 
 @theme inline {
+  --color-paper: var(--paper);
+  --color-cream: var(--cream);
+  --color-navy: var(--navy);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-sand: var(--sand);
+  --color-mist: var(--mist);
+  --color-lake: var(--lake);
+  --color-pine: var(--pine);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(1200px 620px at -8% -12%, rgba(255, 148, 64, 0.55), transparent 56%),
+    radial-gradient(980px 560px at 108% -8%, rgba(47, 156, 172, 0.34), transparent 52%),
+    radial-gradient(760px 480px at 72% 108%, rgba(31, 106, 72, 0.16), transparent 48%),
+    linear-gradient(180deg, #fff3e4 0%, #f7f0e4 40%, #e8f3ef 100%);
+  color: var(--navy);
+  font-family: var(--font-sans), "Segoe UI", sans-serif;
+}
+
+html.lang-hi body {
+  font-family: var(--font-sans-hi), var(--font-sans), sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+}
+
+html.lang-hi .font-display {
+  font-family: var(--font-display-hi), var(--font-display), serif;
+  font-weight: 400;
+}
+
+.title-accent {
+  font-style: italic;
+}
+
+html.lang-hi .title-accent {
+  font-style: normal;
+}
+
+.label-track {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+html.lang-hi .label-track {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.97), rgba(255, 241, 224, 0.94));
+  box-shadow:
+    0 24px 50px -32px rgba(22, 52, 60, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.panel-dusk {
+  background:
+    radial-gradient(520px 240px at 12% 0%, rgba(243, 176, 92, 0.42), transparent 62%),
+    radial-gradient(480px 280px at 100% 80%, rgba(64, 168, 176, 0.4), transparent 58%),
+    linear-gradient(155deg, #1c6670 0%, #12343c 46%, #1a5340 100%);
+}
+
+.dawn-glow {
+  background:
+    radial-gradient(420px 220px at 20% 0%, rgba(255, 170, 90, 0.55), transparent 70%),
+    radial-gradient(360px 200px at 90% 20%, rgba(86, 176, 186, 0.28), transparent 70%);
+}
+
+.photo-frame {
+  box-shadow:
+    0 30px 70px -36px rgba(22, 52, 60, 0.65),
+    0 0 0 1px rgba(255, 250, 244, 0.7);
+}
+
+@layer components {
+.btn-primary,
+.btn-line,
+.btn-gold,
+.btn-line-light {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  padding: 0.7rem 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #2f8f9b, #1b5c66);
+  color: var(--cream);
+  box-shadow: 0 12px 24px -16px rgba(20, 80, 90, 0.9);
+}
+
+.btn-primary:hover {
+  background: #1f6a48;
+}
+
+.btn-line {
+  border: 1px solid var(--sand);
+  background: rgba(255, 250, 244, 0.9);
+  color: var(--navy);
+}
+
+.btn-line:hover {
+  border-color: var(--gold);
+  background: #fff;
+}
+
+.btn-gold {
+  background: linear-gradient(180deg, #f3d08f, #e0a24a);
+  color: var(--navy);
+}
+
+.btn-gold:hover {
+  background: #f0c27a;
+}
+
+.btn-line-light {
+  border: 1px solid rgba(255, 250, 244, 0.45);
+  background: transparent;
+  color: var(--cream);
+}
+
+.btn-line-light:hover {
+  border-color: var(--gold-bright);
+  background: rgba(255, 250, 244, 0.08);
+}
+}
+
+.btn-primary:focus-visible,
+.btn-line:focus-visible,
+.btn-gold:focus-visible,
+.btn-line-light:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #f0c27a;
+  color: var(--navy);
 }
