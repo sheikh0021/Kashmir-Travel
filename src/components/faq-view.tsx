@@ -9,7 +9,7 @@ export function FaqView() {
   const [open, setOpen] = useState(0);
 
   return (
-    <div className="mx-auto max-w-3xl px-5 py-14">
+    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-5 sm:py-14">
       <SectionIntro title={t.faqTitle} lead={t.faqLead} />
       <ul className="mt-10 divide-y divide-sand border-y border-sand">
         {t.faqs.map((item, index) => {

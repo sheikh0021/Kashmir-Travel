@@ -24,12 +24,11 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-sand/80 bg-[#fffaf4]/85 shadow-[0_10px_30px_-24px_rgba(154,83,20,0.7)] backdrop-blur-md">
-      <div className="h-1 bg-gradient-to-r from-[#e08a2a] via-[#f3d08f] to-[#2f7c8a]" aria-hidden="true" />
-      <div className="mx-auto flex h-18 max-w-6xl items-center justify-between gap-4 px-5">
-        <Link href="/" className="group flex items-center gap-3">
-          <span className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-[#f6d7a2] to-[#c47a2a] shadow-sm">
-            <span className="size-2 rotate-45 bg-navy" aria-hidden="true" />
+    <header className="sticky top-0 z-40 border-b border-sand bg-white/95 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:h-18 sm:px-5">
+        <Link href="/" className="flex min-w-0 items-center gap-3">
+          <span className="grid size-9 shrink-0 place-items-center rounded-full bg-lake">
+            <span className="size-2 rotate-45 bg-white" aria-hidden="true" />
           </span>
           <span>
             <span className="font-display block text-2xl leading-none tracking-wide text-navy">
@@ -48,7 +47,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm tracking-wide ${active ? "text-gold" : "text-mist hover:text-navy"}`}
+                className={`text-sm ${active ? "font-medium text-lake" : "text-mist hover:text-navy"}`}
                 aria-current={active ? "page" : undefined}
               >
                 {t.nav[link.key]}

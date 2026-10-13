@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     template: "%s · Al Safar",
   },
   description:
-    "6-day all-inclusive guided group tours from Jabalpur to Kashmir. Packages from ₹18,000 per person. Stay, meals, travel, and a guide. Office at Russell Chowk, Napier Town, Jabalpur. Call or WhatsApp +91 77718 42703.",
+    "6-day all-inclusive guided group tours from Jabalpur to Kashmir. Packages from ₹13,000 per person. Stay, meals, travel, and a guide. Office at Russell Chowk, Napier Town, Jabalpur. Call or WhatsApp +91 77718 42703.",
 };
 
 const jsonLd = {
@@ -56,7 +56,7 @@ const jsonLd = {
   },
   areaServed: "Kashmir",
   description:
-    "6-day all-inclusive guided group tours from Jabalpur to Kashmir. Packages from ₹18,000 per person.",
+    "6-day all-inclusive guided group tours from Jabalpur to Kashmir. Packages from ₹13,000 per person.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

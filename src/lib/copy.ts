@@ -189,7 +189,7 @@ export const copy: Record<Lang, Copy> = {
     pack: "Pack your bags",
     itineraryCta: "Message us on WhatsApp for the day-wise itinerary.",
     priceKicker: "Packages from",
-    price: "₹18,000",
+    price: "₹13,000",
     priceNote: "per person · minimum package",
     days: "6 days",
     daysDetail: "All-inclusive guided group tour",
@@ -244,7 +244,7 @@ export const copy: Record<Lang, Copy> = {
       },
       {
         q: "What does it cost?",
-        a: "Packages start at ₹18,000 per person. That figure is the minimum package.",
+        a: "Packages start at ₹13,000 per person. That figure is the minimum package.",
       },
       {
         q: "Where does the group leave from?",
@@ -359,7 +359,7 @@ export const copy: Record<Lang, Copy> = {
     pack: "बैग पैक कीजिए",
     itineraryCta: "दिन-वार यात्रा के लिए व्हाट्सएप पर संदेश भेजें।",
     priceKicker: "पैकेज शुरू",
-    price: "₹18,000",
+    price: "₹13,000",
     priceNote: "प्रति व्यक्ति · न्यूनतम पैकेज",
     days: "6 दिन",
     daysDetail: "ऑल-इन्क्लूसिव गाइडेड ग्रुप टूर",
@@ -413,7 +413,7 @@ export const copy: Record<Lang, Copy> = {
       },
       {
         q: "कीमत क्या है?",
-        a: "पैकेज ₹18,000 प्रति व्यक्ति से शुरू होते हैं। यह न्यूनतम पैकेज है।",
+        a: "पैकेज ₹13,000 प्रति व्यक्ति से शुरू होते हैं। यह न्यूनतम पैकेज है।",
       },
       {
         q: "ग्रुप कहाँ से निकलता है?",

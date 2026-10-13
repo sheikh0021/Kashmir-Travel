@@ -16,97 +16,84 @@ export function HomeView() {
 
   return (
     <>
-      <section className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pt-12 pb-8 lg:grid-cols-12 lg:gap-14 lg:pt-16">
-        <div className="dawn-glow pointer-events-none absolute -top-8 left-0 h-64 w-72 rounded-full blur-2xl" aria-hidden="true" />
-        <div className="relative lg:col-span-5">
-          <p className="flex items-center gap-3 text-xs font-medium label-track text-gold">
+      <section className="mx-auto grid max-w-6xl items-center gap-8 px-4 pt-8 pb-6 sm:px-5 sm:pt-12 lg:grid-cols-2 lg:gap-12 lg:pt-16">
+        <div>
+          <p className="flex items-center gap-3 text-xs font-medium label-track text-lake">
             <Diamond />
             {t.kicker}
-            <Diamond />
           </p>
-          <p className="mt-6 text-sm label-track text-navy">{t.pack}</p>
-          <h1 className="font-display mt-3 text-6xl leading-[0.92] text-navy sm:text-7xl">
+          <h1 className="font-display mt-4 text-4xl leading-tight text-navy sm:text-6xl lg:text-7xl">
             {t.title}
-            <span className="title-accent block text-gold">{t.titleLine2}</span>
+            <span className="title-accent block">{t.titleLine2}</span>
           </h1>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-mist">{t.subtitle}</p>
-          <BookButtons className="mt-8" />
-          <p className="mt-5 text-sm text-mist">{t.itineraryCta}</p>
+          <p className="mt-5 max-w-md text-base leading-relaxed text-mist sm:text-lg">{t.subtitle}</p>
+          <BookButtons className="mt-7" />
+          <p className="mt-4 text-sm text-mist">{t.itineraryCta}</p>
         </div>
 
-        <div className="lg:col-span-7">
-          <div className="relative">
-            <div className="photo-frame relative aspect-[4/3] overflow-hidden rounded-[2rem] ring-4 ring-white/80">
-              <Image
-                src="/gallery/pahalgam.jpg"
-                alt={t.captions.pahalgam}
-                fill
-                priority
-                loading="eager"
-                className="object-cover"
-                sizes="(min-width: 1024px) 58vw, 100vw"
-              />
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#16343c]/35 to-transparent" />
-              <div className="absolute top-4 right-4 hidden w-32 overflow-hidden rounded-2xl shadow-lg ring-4 ring-white/90 sm:block">
-                <div className="relative aspect-[4/5]">
-                  <Image
-                    src="/gallery/shikara.jpg"
-                    alt={t.captions.shikara}
-                    fill
-                    className="object-cover"
-                    sizes="128px"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="card relative z-10 -mt-16 ml-4 max-w-xs rounded-3xl border border-sand border-l-4 border-l-gold p-6 sm:ml-8">
-              <p className="text-xs label-track text-gold">{t.priceKicker}</p>
-              <p className="font-display mt-2 text-5xl text-navy">{t.price}</p>
-              <p className="mt-1 text-sm text-mist">{t.priceNote}</p>
-              <div className="mt-4 border-t border-sand pt-4">
-                <p className="font-display text-2xl text-navy">{t.days}</p>
-                <p className="text-sm text-mist">{t.daysDetail}</p>
-              </div>
-            </div>
-          </div>
+        <div className="photo-frame relative aspect-[4/3] overflow-hidden rounded-3xl">
+          <Image
+            src="/gallery/pahalgam.jpg"
+            alt={t.captions.pahalgam}
+            fill
+            priority
+            loading="eager"
+            className="object-cover"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="mx-auto max-w-6xl px-4 sm:px-5">
+        <ul className="grid gap-3 sm:grid-cols-3">
+          <li className="card rounded-2xl border border-sand px-5 py-4">
+            <p className="text-xs label-track text-gold">{t.priceKicker}</p>
+            <p className="font-display mt-1 text-4xl text-navy">{t.price}</p>
+            <p className="mt-1 text-sm text-mist">{t.priceNote}</p>
+          </li>
+          <li className="card rounded-2xl border border-sand px-5 py-4">
+            <p className="text-xs label-track text-lake">{t.pack}</p>
+            <p className="font-display mt-1 text-4xl text-navy">{t.days}</p>
+            <p className="mt-1 text-sm text-mist">{t.daysDetail}</p>
+          </li>
+          <li className="card rounded-2xl border border-sand px-5 py-4">
+            <p className="text-xs label-track text-lake">{t.includedTitle}</p>
+            <p className="font-display mt-2 text-2xl leading-snug text-navy">
+              {t.inclusions.map((item) => item.title).join(" · ")}
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-16">
         <SectionIntro title={t.includedTitle} lead={t.includedLead} />
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {t.inclusions.map((item, index) => (
-            <li
-              key={item.title}
-              className="card overflow-hidden rounded-3xl border border-sand"
-            >
-              <span
-                className={`block h-2 ${["bg-[#d97706]", "bg-[#e0a020]", "bg-[#1a8a98]", "bg-[#1f6a48]"][index % 4]}`}
-                aria-hidden="true"
-              />
-              <div className="p-6">
-                <p className="font-display text-3xl text-navy">{item.title}</p>
-                <p className="mt-3 text-sm leading-6 text-mist">{item.text}</p>
-              </div>
+            <li key={item.title} className="card rounded-2xl border border-sand p-5 sm:p-6">
+              <span className="grid size-9 place-items-center rounded-full bg-lake/10 text-sm font-medium text-lake">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <p className="font-display mt-4 text-3xl text-navy">{item.title}</p>
+              <p className="mt-2 text-sm leading-6 text-mist">{item.text}</p>
             </li>
           ))}
         </ul>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-16">
+      <section className="mx-auto max-w-6xl px-4 pb-14 sm:px-5 sm:pb-16">
         <div className="card overflow-hidden rounded-[2rem] border border-sand">
           <div className="grid lg:grid-cols-2">
-            <div className="panel-dusk px-8 py-12 text-cream sm:px-12">
+            <div className="panel-dusk px-6 py-10 text-cream sm:px-12 sm:py-12">
               <p className="text-xs label-track text-gold-bright">
                 {t.kicker}
               </p>
-              <p className="font-display mt-4 text-6xl">{t.days}</p>
+              <p className="font-display mt-4 text-5xl sm:text-6xl">{t.days}</p>
               <p className="mt-2 text-lg text-cream/80">{t.daysDetail}</p>
-              <p className="font-display mt-8 text-5xl text-gold-bright">{t.price}</p>
+              <p className="font-display mt-8 text-4xl text-gold-bright sm:text-5xl">{t.price}</p>
               <p className="mt-2 text-sm text-cream/70">{t.priceNote}</p>
             </div>
-            <div className="px-8 py-12 sm:px-12">
-              <h2 className="font-display text-4xl text-navy">{t.stepsTitle}</h2>
+            <div className="px-6 py-10 sm:px-12 sm:py-12">
+              <h2 className="font-display text-3xl text-navy sm:text-4xl">{t.stepsTitle}</h2>
               <ol className="mt-8 space-y-6">
                 {t.steps.map((step) => (
                   <li key={step.n} className="grid grid-cols-[auto_1fr] gap-4">
@@ -125,7 +112,7 @@ export function HomeView() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-8">
+      <section className="mx-auto max-w-6xl px-4 pb-8 sm:px-5">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionIntro title={t.galleryTitle} lead={t.galleryLead} />
           <Link href="/gallery" className="btn-line">
@@ -158,8 +145,8 @@ export function HomeView() {
         </ul>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-4">
-        <div className="card grid items-center gap-8 rounded-[2rem] border border-sand px-8 py-10 lg:grid-cols-[1.4fr_auto]">
+      <section className="mx-auto max-w-6xl px-4 pb-4 sm:px-5">
+        <div className="card grid items-center gap-6 rounded-3xl border border-sand px-5 py-8 sm:px-8 lg:grid-cols-[1.4fr_auto]">
           <div>
             <p className="label-track text-xs text-gold">{t.family.kicker}</p>
             <h2 className="font-display mt-3 text-4xl text-navy sm:text-5xl">{t.family.homeTitle}</h2>
@@ -171,16 +158,16 @@ export function HomeView() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
-        <div className="panel-dusk rounded-[2rem] px-8 py-14 text-center text-cream sm:px-16">
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-16">
+        <div className="panel-dusk rounded-3xl px-6 py-12 text-center text-cream sm:px-16 sm:py-14">
           <p className="text-xs label-track text-gold-bright">{t.pack}</p>
-          <h2 className="font-display mt-4 text-5xl sm:text-6xl">{t.bandTitle}</h2>
+          <h2 className="font-display mt-4 text-4xl sm:text-6xl">{t.bandTitle}</h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-cream/75">{t.bandText}</p>
           <BookButtons className="mt-8 justify-center" onDark />
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-20">
+      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-5">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionIntro title={t.faqTitle} />
           <Link href="/faq" className="btn-line">

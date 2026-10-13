@@ -129,11 +129,11 @@ export function StrangersView() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14">
+    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-5 sm:py-14">
       <section className="grid items-end gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
           <p className="label-track mb-4 text-xs text-gold">{copy.kicker}</p>
-          <h1 className="font-display text-5xl leading-[0.95] text-navy sm:text-7xl">
+          <h1 className="font-display text-4xl leading-tight text-navy sm:text-6xl lg:text-7xl">
             {copy.title}
             <span className="title-accent block text-gold">{copy.titleLine2}</span>
           </h1>

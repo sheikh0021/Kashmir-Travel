@@ -20,7 +20,7 @@ export function Footer() {
             {PHONE_DISPLAY}
           </a>
         </div>
-        <div className="flex gap-5 text-sm text-cream/75">
+        <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-cream/75">
           <Link href="/strangers" className="hover:text-gold-bright">
             {t.nav.draw}
           </Link>

@@ -31,7 +31,7 @@ export function BookButtons({
 }) {
   const { t } = useLanguage();
   return (
-    <div className={`flex flex-col gap-3 sm:flex-row ${className}`}>
+    <div className={`flex flex-col gap-3 sm:flex-row sm:flex-wrap [&>a]:w-full sm:[&>a]:w-auto ${className}`}>
       <a
         className={onDark ? "btn-gold" : "btn-primary"}
         href={whatsappHref(t.whatsappMessage)}
@@ -66,7 +66,7 @@ export function SectionIntro({
           {kicker}
         </p>
       ) : null}
-      <h2 className="font-display text-4xl leading-tight text-navy sm:text-5xl">
+      <h2 className="font-display text-3xl leading-tight text-navy sm:text-5xl">
         {title}
       </h2>
       {lead ? <p className="mt-4 text-lg leading-relaxed text-mist">{lead}</p> : null}

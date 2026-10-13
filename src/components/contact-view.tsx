@@ -9,7 +9,7 @@ export function ContactView() {
   const { t } = useLanguage();
 
   return (
-    <div className="mx-auto grid max-w-6xl gap-12 px-5 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+    <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-5 sm:py-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
       <div>
         <SectionIntro title={t.contactTitle} lead={t.contactLead} />
         <div className="mt-10 grid gap-4 sm:grid-cols-2">

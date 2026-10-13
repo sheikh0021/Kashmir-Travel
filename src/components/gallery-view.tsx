@@ -21,7 +21,7 @@ export function GalleryView() {
   }, [active]);
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14">
+    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-5 sm:py-14">
       <SectionIntro title={t.galleryTitle} lead={t.galleryLead} />
       <p className="mt-6 max-w-3xl rounded-2xl border border-gold/30 bg-gold/10 px-4 py-3 text-sm leading-6 text-navy">
         {t.galleryNote}
